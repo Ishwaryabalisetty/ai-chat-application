@@ -1,0 +1,28 @@
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-primary);
+  min-width: 0;
+}
+
+.messages-area {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.messages-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 24px 16px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Welcome fills available space */
+.messages-inner:has(.welcome) {
+  justify-content: center;
+}

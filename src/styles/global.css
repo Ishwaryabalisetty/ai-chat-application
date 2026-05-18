@@ -1,0 +1,146 @@
+/* ========== RESET ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== FONTS ========== */
+:root {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== DARK THEME (default) ========== */
+[data-theme="dark"] {
+  --bg-primary: #0d0d0f;
+  --bg-secondary: #131316;
+  --bg-tertiary: #1a1a1f;
+  --bg-hover: #212127;
+  --bg-active: #26262d;
+  --bg-input: #1a1a1f;
+  --bg-user-msg: #1c1830;
+  --bg-code-header: #1e1e24;
+
+  --border-primary: #2a2a32;
+  --border-secondary: #32323c;
+  --border-accent: #5b3de8;
+  --border-user: #3d2a7a;
+
+  --text-primary: #ececf1;
+  --text-secondary: #9494a0;
+  --text-muted: #55555f;
+  --text-accent: #a78bfa;
+  --text-on-accent: #ffffff;
+
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-light: #4c1d95;
+  --accent-glow: rgba(124, 58, 237, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+
+  --scrollbar-thumb: #2a2a32;
+  --scrollbar-hover: #3a3a45;
+}
+
+/* ========== LIGHT THEME ========== */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f8;
+  --bg-tertiary: #f0f0f2;
+  --bg-hover: #ebebed;
+  --bg-active: #e4e4e8;
+  --bg-input: #f7f7f8;
+  --bg-user-msg: #ede9fe;
+  --bg-code-header: #e8e8ed;
+
+  --border-primary: #e2e2e8;
+  --border-secondary: #d4d4dc;
+  --border-accent: #7c3aed;
+  --border-user: #c4b5fd;
+
+  --text-primary: #111118;
+  --text-secondary: #6b6b78;
+  --text-muted: #9999a8;
+  --text-accent: #7c3aed;
+  --text-on-accent: #ffffff;
+
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-light: #ede9fe;
+  --accent-glow: rgba(124, 58, 237, 0.08);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+  --scrollbar-thumb: #d4d4dc;
+  --scrollbar-hover: #c4c4cc;
+}
+
+/* ========== BASE ========== */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover); }
+
+/* ========== SELECTION ========== */
+::selection {
+  background: var(--accent-light);
+  color: var(--text-primary);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50%       { transform: translateY(-5px); opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ========== UTILITY ========== */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
